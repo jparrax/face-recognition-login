@@ -1,0 +1,29 @@
+.container-fluid{
+  background-image: url("../assets/main-image.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.main-row{
+  height: 100vh;
+  width: 100vw;
+}
+#videoContainer {
+	margin: 0px;
+  padding: 0px;
+	width: 500px;
+	height: 375px;
+	border: 10px #333 solid;
+}
+#videoElement {
+  margin: 0px;
+  padding: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #666;
+}
+#loginButton{
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
