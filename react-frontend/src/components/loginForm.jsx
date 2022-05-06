@@ -9,7 +9,7 @@ class LoginForm extends Component {
         <Row className="justify-content-center main-row align-items-center">
           <Col className="d-flex justify-content-center" md={3}>
             <Container>
-              <Row className="mb-1">
+              <Row className="mb-3">
                 <Col id="videoContainer">
                   <video autoplay="true" id="videoElement"></video>
                 </Col>

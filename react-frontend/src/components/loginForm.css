@@ -13,14 +13,14 @@
   padding: 0px;
 	width: 500px;
 	height: 375px;
-	border: 10px #333 solid;
+	border: 10px #0d6efd solid;
 }
 #videoElement {
   margin: 0px;
   padding: 0px;
 	width: 100%;
 	height: 100%;
-	background-color: #666;
+	background-color: #0d6efd;
 }
 #loginButton{
   margin: 0px;
