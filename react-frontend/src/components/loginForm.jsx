@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './loginForm.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import html2canvas from 'html2canvas';
+import axios from 'axios';
 
 class LoginForm extends Component {
   render() {
@@ -16,7 +18,7 @@ class LoginForm extends Component {
               </Row>
               <Row>
                 <Col className="d-flex justify-content-center">
-                  <Button size="lg" id="loginButton">Login</Button>
+                  <Button size="lg" id="loginButton" onClick={this.postDataURLImage}>Login</Button>
                 </Col>
               </Row>
             </Container>
@@ -26,7 +28,34 @@ class LoginForm extends Component {
     );
   }
 
-  componentDidMount() {
+  postDataURLImage () {
+    let videoElement = document.querySelector("#videoElement");
+    html2canvas(videoElement).then(function(canvas) {
+      canvas.toBlob( blob => {
+        let formData = new FormData();
+        formData.append('face', blob, 'face.png');
+        axios.post('http://dnzauc5014.nead.danet:3001/authenticate', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        })
+        .then(function (response) {
+          if (response.status === 200) {
+            if (response.data.data === 'True') {
+              window.alert('Login Successful');
+            } else {
+              window.alert('Login Failed');
+            }
+          }
+        })
+        .catch(error => {
+            window.alert('Somehting went wrong, try to use a bigger monitor.');
+        })
+      })
+    });
+  }
+
+  componentDidMount () {
     var video = document.querySelector("#videoElement");
 
     if (navigator.mediaDevices.getUserMedia) {
