@@ -11,7 +11,7 @@ class LoginForm extends Component {
             <Container>
               <Row className="mb-3">
                 <Col id="videoContainer">
-                  <video autoplay="true" id="videoElement"></video>
+                  <video autoPlay={true} id="videoElement"></video>
                 </Col>
               </Row>
               <Row>
