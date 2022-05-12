@@ -34,7 +34,7 @@ class LoginForm extends Component {
       canvas.toBlob( blob => {
         let formData = new FormData();
         formData.append('face', blob, 'face.png');
-        axios.post('http://dnzauc5014.nead.danet:3001/authenticate', formData, {
+        axios.post(process.env.REACT_APP_AUTHENTICATION_API_URL, formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
